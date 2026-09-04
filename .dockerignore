@@ -1,0 +1,18 @@
+# --- Général / Git ---
+.git
+.gitignore
+README.md
+*.log
+
+# --- Données locales ---
+db_data/
+
+# --- Rust (gourmand-zombie) ---
+gourmand-zombie/target/
+gourmand-zombie/Cargo.lock
+gourmand-zombie/db_data
+
+# --- SvelteKit (delicieux-squelette) ---
+delicieux-zquelette/node_modules/
+delicieux-squelette/.svelte-kit/
+delicieux-squelette/dist/
