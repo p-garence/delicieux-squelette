@@ -1,0 +1,49 @@
+.bgg {
+  background: rgb(15, 138, 5);
+  background: radial-gradient(
+    circle,
+    rgba(15, 138, 5, 1) 0%,
+    rgba(173, 5, 186, 1) 5%,
+    rgba(10, 116, 1, 1) 13%,
+    rgba(80, 5, 168, 1) 47%,
+    rgba(46, 97, 81, 1) 64%,
+    rgba(19, 71, 5, 1) 83%
+  );
+}
+
+.text-border {
+  text-shadow: 2px 0 #030200, -2px 0 #030200, 0 2px #030200, 0 -2px #030200,
+    1px 1px #030200, -1px -1px #030200, 1px -1px #030200, -1px 1px #030200;
+}
+
+.no-text-border {
+  text-shadow: none;
+}
+
+.base { 
+  background: #134705;
+}
+
+.text-base {
+  background: rgba(19, 71, 5, 1);
+}
+.shadow-blend {
+  background: rgb(19,71,5);
+  background: linear-gradient(180deg, rgba(19,71,5,1) 0%, rgba(19,71,5,0) 100%);
+}
+
+.grid-scroll {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.shadow-fuzz {
+  box-shadow: 0px 0px 10px 10px #699183;
+}
+
+.bg-primary {
+  background: #bda3bf;
+}
+
+.bg-dessin {
+  background: #709c8d;
+}

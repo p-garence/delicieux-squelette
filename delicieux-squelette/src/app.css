@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+/* 1. Load Skeleton Core Token System */
+@import '@skeletonlabs/skeleton';
+
+/* 2. Load your Theme */
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+/* 3. Load the styles specific to the new Svelte 5 components */
+@import '@skeletonlabs/skeleton-svelte';

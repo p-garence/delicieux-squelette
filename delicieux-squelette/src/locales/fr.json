@@ -1,0 +1,16 @@
+{
+    "titre" : "délicieux squelette",
+    "welcome.1": "le delicieux squelette, un cadavre exquis",
+    "welcome.2" : "",
+    "welcome.3" : "",
+    "welcome.4" : "Le projet est dispo ICI",
+    "accueil" : "accueil",
+    "parcourir": "admirer",
+    "draw": "dessiner",
+    "loading" : "chargement",
+    "changeDrawing":"changer de dessin",
+    "startDrawing":"commencer un dessin",
+    "send": "envoyer",
+    "safari_bug" : "safari détecté",
+    "cancel": "annuler"
+}
