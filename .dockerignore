@@ -3,6 +3,7 @@
 .gitignore
 README.md
 *.log
+.env
 
 # --- Données locales ---
 db_data/
