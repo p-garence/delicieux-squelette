@@ -8,10 +8,8 @@
   let popoverOpen = $state(false);
 </script>
 
-<!-- 1. The Root component manages the state -->
 <Popover open={popoverOpen} onOpenChange={(e) => popoverOpen = e.open} positioning={{ placement: "bottom" }}>
   
-  <!-- 2. The Trigger component automatically handles clicks and accessibility -->
   <Popover.Trigger class="btn preset-filled flex items-center justify-between">
     {#if $selectedRoom?.name}
       <div class="min-w-50">
@@ -24,7 +22,6 @@
     {/if}
   </Popover.Trigger>
 
-  <!-- 3. The Content component holds your dropdown UI -->
   <Popover.Content class="card p-4 w-72 flex-col flex bg-surface-100-900 border border-surface-200-800 shadow-xl rounded-container z-50">
     <Popover.Arrow />
     

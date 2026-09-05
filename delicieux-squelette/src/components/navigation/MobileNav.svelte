@@ -11,7 +11,6 @@
   }
 </script>
 
-<!-- 1. The dark overlay behind the drawer -->
 {#if isOpen}
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -21,7 +20,6 @@
   ></div>
 {/if}
 
-<!-- 2. The Drawer itself (slides in from left) -->
 <div 
   class="fixed top-0 left-0 h-full w-64 md:w-80 bg-surface-900 z-50 transform transition-transform duration-300 ease-in-out base {isOpen ? 'translate-x-0' : '-translate-x-full'}"
 >

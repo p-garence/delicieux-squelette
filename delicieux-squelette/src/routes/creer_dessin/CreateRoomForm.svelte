@@ -52,11 +52,9 @@
             {#each $roomAdd.colors as color, i}
                 <label for="color{i}" class="flex flex-row items-stretch">
                     
-                    <!-- CORRIGÉ : On bind sur l'index du tableau, pas sur la variable locale -->
                     <input class="h-full w-full cursor-pointer" type="color" id="color{i}" bind:value={$roomAdd.colors[i]} />
                     
                     {#if i !== 0}
-                        <!-- CORRIGÉ : type="button" empêche la soumission du form ! -->
                         <button
                             type="button"
                             class="btn btn-icon preset-filled rounded-none"

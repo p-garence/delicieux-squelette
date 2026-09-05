@@ -5,8 +5,8 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${DB_NAME} # CORRIGÉ : Crée 'test_db' au démarrage
+      - POSTGRES_DB=${DB_NAME} 
     ports:
       - "5432:5432"
     volumes:
-      - ./db_data:/var/lib/postgresql/data # CORRIGÉ : Vrai chemin Postgres
+      - ./db_data:/var/lib/postgresql/data

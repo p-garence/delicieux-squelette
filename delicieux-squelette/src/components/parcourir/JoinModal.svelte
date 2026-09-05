@@ -56,7 +56,6 @@
     {/if}
 
     <div class="flex flex-row justify-end gap-2 mt-4">
-        <!-- 3. Call closeModal on cancel -->
         <button type="button" onclick={closeModal} class="btn preset-tonal w-[100px]">
             Annuler
         </button>
