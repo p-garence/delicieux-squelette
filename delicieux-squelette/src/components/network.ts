@@ -19,7 +19,6 @@ export const deleteRoom = async (args: { id: number, password?: string }, fetch:
 
 export const getDessins = async (args: { id: number, password?: string }, fetch: any) => {
     let res = await sendPost("/get_dessins", args, fetch, env.PUBLIC_API_URL) as NetworkResponse<Cell[]>
-    // dirty fix for legacy drawing hahahaha
     if (res.content) {
         let cells = res.content
         for (let cell of cells)
