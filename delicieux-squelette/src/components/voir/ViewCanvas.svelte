@@ -16,13 +16,10 @@
 
   let worker: Worker | null;
 
-  // FIX 1 : On enlève le $state() !
-  // Dans Svelte 5, bind:this marche très bien avec un 'let' classique.
-  // Cela empêche le Proxy Svelte de faire planter ef-infinite-canvas.
+
   let canvas: HTMLCanvasElement;
   let context: CanvasRenderingContext2D | null;
 
-  // FIX 2 : On passe ces variables en $state pour supprimer les avertissements de compilation
   let offsetX = $state(0);
   let offsetY = $state(0);
   let scale = $state(1);
@@ -30,7 +27,6 @@
   let middlex = $derived((width / 2) + offsetX);
   let middley = $derived((height / 2) + offsetY);
 
-  // FIX 3 : Compatible SSR. On l'initialise à false, et on vérifiera au montage.
   let is_safari = $state(false);
 
   const move = (x: number, y: number) => {
@@ -110,11 +106,9 @@
         }
 
         try {
-          // LA CORRECTION EST ICI :
-          // On transforme les pixels bruts en "ImageBitmap" (ultra performant)
+        
           const bitmap = await window.createImageBitmap(data);
           
-          // Et on utilise drawImage au lieu de putImageData !
           context?.drawImage(
             bitmap,
             e.data.x * scale + middlex,
@@ -138,7 +132,6 @@
   };
 
   onMount(() => {
-    // La vérification du navigateur se fait ici (côté client uniquement)
     const is_chrome = navigator.userAgent.indexOf("Chrome") > -1;
     is_safari = navigator.userAgent.indexOf("Safari") > -1 && !is_chrome;
 
@@ -147,7 +140,6 @@
     if (is_safari) {
       context = canvas.getContext("2d");
     } else {
-      // Le canvas brut est passé à la librairie, le crash disparaît !
       const infinite_canvas = new InfiniteCanvas(canvas);
       infinite_canvas.greedyGestureHandling = true;
       context = infinite_canvas.getContext("2d");

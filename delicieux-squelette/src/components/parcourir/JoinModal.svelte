@@ -3,7 +3,6 @@
     import { selectedIndex } from './selectedIndexStore';
     import { goto } from '$app/navigation';
 
-    // 1. Accept the closeModal function from the parent
     let { closeModal }: { closeModal: () => void } = $props();
 
     let room = $derived($allRooms && $selectedIndex !== -1 ? $allRooms[$selectedIndex] : undefined);
@@ -14,14 +13,14 @@
     const click = () => {
         if ($allRooms && $selectedIndex !== -1 && room) {
             promise = joinRoom(room).then(() => {
-                closeModal(); // 2. Close native dialog on success
+                closeModal(); 
                 goto('/voir');
             });
         }
     };
 </script>
 
-<div class="gap-4 flex flex-col w-full max-w-[500px]">
+<div class="gap-4 flex flex-col w-full max-w-125">
     <h2 class="h2">{room?.name}</h2>
 
     <p>Resolution : {room?.resolution}</p>
@@ -29,7 +28,7 @@
     <p>Colors</p>
     <div class="grid grid-cols-3 gap-2 self-start">
         {#each room?.colors ?? [] as color}
-            <div class="w-[40px] h-[20px] rounded" style="background-color: {color};"></div>
+            <div class="w-10 h-5 rounded" style="background-color: {color};"></div>
         {/each}
     </div>
 
@@ -56,10 +55,10 @@
     {/if}
 
     <div class="flex flex-row justify-end gap-2 mt-4">
-        <button type="button" onclick={closeModal} class="btn preset-tonal w-[100px]">
+        <button type="button" onclick={closeModal} class="btn preset-tonal w-25">
             Annuler
         </button>
-        <button type="button" onclick={click} class="btn preset-filled w-[100px]">
+        <button type="button" onclick={click} class="btn preset-filled w-25">
             Rejoindre
         </button>
     </div>
